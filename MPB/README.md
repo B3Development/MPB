@@ -17,7 +17,7 @@
 ⌯ ``serverinfo`` - Displays information about the server.  
 ⌯ ``userinfo @member`` - Displays information about specified user.  
 ⌯ ``ping`` - Displays the bot's ping in milliseconds.   
-⌯ ``roll`` - Rolls a random number between 1 and 10. 
+⌯ ``roll`` - Rolls a random number between 1 and 10.  
 ⌯ ``members`` - Sends how many members are in the current server.  
 ⌯ ``whatsnext`` - Displays upcoming changes to the bot.  
 ⌯ ``github`` - Displays Fwayne's GitHub page link.  

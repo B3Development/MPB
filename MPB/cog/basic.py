@@ -9,17 +9,19 @@ class Basic(commands.Cog):
 
 ################################ What's Next Command ################################
 
-    @commands.command()
+    @commands.command(name = 'whatsnext', description = "Displays upcoming features coming to the bot.")
     async def whatsnext(self, ctx):
+        """Displays upcoming features coming to the bot."""
 
-        embed = discord.Embed(title = "> What's to come?", description = "⌯ Music system\n⌯ Bug fixing\n⌯ Code cleanup", color = 0x7289da)
+        embed = discord.Embed(title = "> What's to come?", description = "⌯ Ticket system w/ buttons\n⌯ Music system\n⌯ Bug fixing\n⌯ Code cleanup", color = 0x7289da)
 
         await ctx.send(embed = embed)
 
 ################################### GitHub Command ###################################
 
-    @commands.command()
+    @commands.command(name = 'github', description = "Sends the bot's GitHub link.")
     async def github(self, ctx):
+        """Sends the bot's GitHub link."""
 
         embed = discord.Embed(title = "> My GitHub Page!", description = "https://github.com/TheFwayne/MPB", color = 0x7289da)
 
@@ -47,6 +49,15 @@ class Basic(commands.Cog):
 
         embed = discord.Embed(title = f"**🏓   | ** *{round(self.client.latency * 1000)}ms*")
 
+        await ctx.send(embed = embed)
+
+################################### Members Command ###################################
+
+    @commands.command(name = 'members', description = "Sends how many members are in the current server.")
+    async def members(self, ctx):
+        """Sends how many members are in the current server."""
+
+        embed = discord.Embed(title = f"There are **{ctx.guild.member_count}** members in __**{ctx.guild.name}**__")
         await ctx.send(embed = embed)
 
 ################################### User Info Command ###################################

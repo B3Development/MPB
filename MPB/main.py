@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv() # Loading token from .env file
 
-client = commands.Bot(command_prefix = "-") # Setting the bot's prefix.(charachter before each command)
+client = commands.Bot(command_prefix = "-") # Setting the bot's prefix.(character before each command)
 
 @client.event
 async def on_ready():

@@ -37,12 +37,16 @@ class Admin(commands.Cog):
     @commands.has_permissions(kick_members = True)
     async def kick(self, ctx, member : discord.Member, *, reason = None):
         """Kicks specified member."""
+
         await member.kick(reason = reason)
+
+################################### Ban Command ###################################
 
     @commands.command(name = 'ban', description = "Bans specified member.")
     @commands.has_permissions(ban_members = True, kick_members = True)
     async def ban(self, ctx, member : discord.Member, *, reason = None):
         """Bans specified member."""
+
         await member.ban(reason = reason)
 
 ################################### Mute Command ###################################
@@ -51,6 +55,7 @@ class Admin(commands.Cog):
     @commands.has_permissions(ban_members = True, kick_members = True)
     async def mute(self, ctx, member : discord.Member, *, reason = None):
         """Mutes specified member."""
+
         guild = ctx.guild
         mutedRole = discord.utils.get(guild.roles, name = "Muted")
 
@@ -74,6 +79,7 @@ class Admin(commands.Cog):
     @commands.has_permissions(ban_members = True, kick_members = True)
     async def unmute(self, ctx, member : discord.Member):
         """Unmutes specified member."""
+        
         mutedRole = discord.utils.get(ctx.guild.roles, name = "Muted")
 
         await member.remove_roles(mutedRole)

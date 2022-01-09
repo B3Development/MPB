@@ -40,6 +40,13 @@ class Admin(commands.Cog):
 
         await member.kick(reason = reason)
 
+        embed = discord.Embed(title = f"{member} has been kicked!", color = 0x7289da)
+        embed.set_thumbnail(url = member.avatar)
+        embed.add_field(name  = "User ID", value = member.id)
+        embed.add_field(name  = "Reason:", value = reason)
+
+        await ctx.send(embed = embed)
+
 ################################### Ban Command ###################################
 
     @commands.command(name = 'ban', description = "Bans specified member.")
@@ -48,6 +55,13 @@ class Admin(commands.Cog):
         """Bans specified member."""
 
         await member.ban(reason = reason)
+
+        embed = discord.Embed(title = f"{member} has been banned!", color = 0x7289da)
+        embed.set_thumbnail(url = member.avatar)
+        embed.add_field(name  = "User ID", value = member.id)
+        embed.add_field(name  = "Reason:", value = reason)
+
+        await ctx.send(embed = embed)
 
 ################################### Mute Command ###################################
 

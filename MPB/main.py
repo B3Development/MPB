@@ -7,7 +7,10 @@ from dotenv import load_dotenv
 
 load_dotenv() # Loading token from .env file
 
-client = commands.Bot(command_prefix = "-") # Setting the bot's prefix.(character before each command)
+intents = discord.Intents.default()
+intents.members = True
+
+client = commands.Bot(command_prefix = "-", intents = intents) # Setting the bot's prefix.(character before each command)
 
 @client.event
 async def on_ready():
@@ -17,10 +20,15 @@ async def on_ready():
 
     print(f'+----------------------+\n'
           f'|        MPB Bot       |\n'
-          f'|         v1.0         |\n'
+          f'|         v1.1         |\n'
           f'+----------------------+\n'
           f'|       By Fwayne      |\n'
           f'+----------------------+\n') # Letting us know the bot is ready for action.
+
+@client.event 
+async def on_member_join(member):
+  role = discord.utils.get(member.guild.roles, id = 919468792139091989)
+  await member.add_roles(role)
 
 @client.command()
 async def load(extension):

@@ -22,4 +22,4 @@
 ⌯ ``whatsnext`` - Displays upcoming changes to the bot.  
 ⌯ ``github`` - Displays Fwayne's GitHub page link.  
 
-*v1.0*
+*v1.1*
